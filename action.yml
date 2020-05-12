@@ -1,0 +1,35 @@
+name: 'Get Pull Request Data'
+description: 'Get Pull Request Data'
+author: 'Sergio Garcia'
+branding:
+  icon: 'git-pull-request'
+  color: 'blue'
+inputs:
+  github_token:
+    description: 'The GitHub token (if not provided the environment variable GITHUB_TOKEN will be used instead)'
+    required: false
+  pull_number:
+    description: 'The pull request number'
+    required: true
+outputs:
+  base_ref:
+    description: 'The base_ref'
+  base_sha:
+    description: 'The base_sha'
+  head_ref:
+    description: 'The head_ref'
+  head_sha:
+    description: 'The head_sha'
+  state:
+    description: 'The state'
+  mergeable:
+    description: 'The mergeable'
+  mergeable_state:
+    description: 'The mergeable_state'
+  title:
+    description: 'The title'
+  user_login:
+    description: 'The user_login'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
